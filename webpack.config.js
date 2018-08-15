@@ -33,7 +33,8 @@ module.exports = {
     new HtmlWebpackPlugin({
        inlineSource: '.(js|css)$',
        title: '',
-       filename: 'index.html'
+       filename: 'index.html',
+	   template: 'src/index.html',
     }),
     new HtmlWebpackInlineSourcePlugin(),
     new webpack.DefinePlugin({
