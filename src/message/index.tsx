@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import {Notification, NotificationUI} from "./notification";
-import {Question, QuestionUI} from "./question";
+import {MultipleChoice, MultipleChoiceUI} from "./multiplechoice";
 
 export interface Message {
   id: string;
@@ -12,9 +12,10 @@ export interface Props {
   continuation?: (next: string) => void;
 }
 
-function isQuestion(message: Message): message is Question {
+function isMultipleChoice(message: Message): message is MultipleChoice {
   // If it got answers, it is a question
-  return !!(message as any).answers;
+  console.log(!!(message as any).answers);
+    return !!(message as any).answers;
 }
 
 function isNotification(message: Message): message is Notification {
@@ -23,8 +24,8 @@ function isNotification(message: Message): message is Notification {
 
 
 export const MessageUI = (props: Message & Props) => {
-  if(isQuestion(props))
-    <QuestionUI {...props} />;
+  if(isMultipleChoice(props))
+    return <MultipleChoiceUI {...props} />;
 
   if(isNotification(props))
     return <NotificationUI {...props} />;

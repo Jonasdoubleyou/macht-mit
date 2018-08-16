@@ -23,8 +23,25 @@ const messageByID: {[id: string]: any} = {
   },
   intro: {
     text: "Kennst du einen deiner Abgeordneten?",
-    time: 60 * 1000,
-     next: "???", // TODO: continue this story
+    answers: [
+      {
+        text: "Ja klar!",
+        next: "knows_representative"
+      },
+      {
+        text: "Nein",
+        next: "doesnt_know_representative"
+      }
+    ]
+
+  },
+  knows_representative: {
+    text: "Klasse! Has du schon mal mit ihr / ihm gesprochen?",
+    next: "???"
+  },
+  doesnt_know_representative: {
+    text: "Na dann kannst du ihn ja jetzt kennenlernen!",
+    next: "???"
   }
 };
 

@@ -30,3 +30,25 @@ body {
 h2 .notification {
   font-size: 30px;
 }
+
+.button {
+  color: white;
+  background-color: black;
+  flex-grow: 2;
+  flex-flow: unset;
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.chosen {
+  color: black;
+  background-color: white;
+  border: thin solid black;
+}
+
+.button-container {
+  display: flex;
+  flex-flow: column;
+}
