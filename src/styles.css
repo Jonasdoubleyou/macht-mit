@@ -27,8 +27,14 @@ body {
   text-align: center;
 }
 
-h2 .notification {
+h2.notification {
   font-size: 30px;
+}
+
+img.notification {
+  width: auto;
+  border: thin solid black;
+  padding: 10px;
 }
 
 .button {
