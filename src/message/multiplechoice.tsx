@@ -17,6 +17,11 @@ export interface Answer {
   next: string;
 }
 
+export function isMultipleChoice(message: Message): message is MultipleChoice {
+  // If it got answers, it is a question
+  return !!(message as any).answers;
+}
+
 interface State {
     // Gets set after the user answered the dialogue
     chosen?: string;

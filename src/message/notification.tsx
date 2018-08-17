@@ -14,6 +14,10 @@ export interface Notification extends Message {
   next: string;
 }
 
+export function isNotification(message: Message): message is Notification {
+  return !!(message as any).next;
+}
+
 export class NotificationUI extends React.Component<Notification & Props, {}> {
 
   timer?: NodeJS.Timer;
