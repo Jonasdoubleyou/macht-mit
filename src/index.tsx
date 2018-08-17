@@ -4,10 +4,13 @@ import * as ReactDOM from "react-dom";
 import "./styles.css";
 
 import {Message, MessageUI} from "./message/index";
+import * as Store from "./store";
 
 interface AppState {
   messages: Message[];
 }
+
+import landkreise from "./data/landkreise";
 
 const messageByID: {[id: string]: any} = {
   start: {
@@ -41,7 +44,19 @@ const messageByID: {[id: string]: any} = {
   },
   doesnt_know_representative: {
     text: "Na dann kannst du ihn ja jetzt kennenlernen!",
-    next: "???"
+    next: "choose_representative"
+  },
+  choose_representative: {
+    text: "In welchem Wahlkreis lebst du?",
+    choices: landkreise,
+    storeAs: "landkreis",
+    next: "show_representative",
+  },
+  show_representative: {
+    get text() {
+      return `Dein Abgeordneter in ${Store.get("landkreis")} ist {jemand}`;
+    },
+    next: "???",
   }
 };
 

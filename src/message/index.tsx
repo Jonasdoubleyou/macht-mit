@@ -2,6 +2,7 @@ import * as React from "react";
 
 import {Notification, NotificationUI, isNotification} from "./notification";
 import {MultipleChoice, MultipleChoiceUI, isMultipleChoice} from "./multiplechoice";
+import {InputChoice, InputChoiceUI, isInputChoice} from "./inputchoice";
 
 export interface Message {
   id: string;
@@ -18,6 +19,9 @@ export interface Props {
 export const MessageUI = (props: Message & Props) => {
   if(isMultipleChoice(props))
     return <MultipleChoiceUI {...props} />;
+
+  if(isInputChoice(props))
+    return <InputChoiceUI {...props} />;
 
   if(isNotification(props))
     return <NotificationUI {...props} />;

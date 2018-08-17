@@ -53,3 +53,9 @@ h2 .notification {
   display: flex;
   flex-flow: column;
 }
+
+.choice {
+  color: black;
+  background-color: white;
+  border: thin solid black;
+}
