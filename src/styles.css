@@ -32,8 +32,9 @@ h2 .notification {
 }
 
 .button {
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: white;
+  border: thin solid black;
   flex-grow: 2;
   flex-flow: unset;
   text-align: center;
@@ -43,9 +44,9 @@ h2 .notification {
 }
 
 .chosen {
-  color: black;
-  background-color: white;
-  border: thin solid black;
+  color: white;
+  background-color: black;
+  border: none;
 }
 
 .button-container {
