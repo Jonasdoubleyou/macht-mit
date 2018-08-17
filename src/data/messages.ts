@@ -1,6 +1,6 @@
 import * as Store from "./../store";
 import landkreise from "./landkreise";
-
+import * as Abgeordnete from "./abgeordnete_niedersachsen";
 const messageByID: {[id: string]: any} = {
   start: {
     text: "\n\n\nMacht mit! Niedersachsen\n\n\n",
@@ -62,18 +62,27 @@ const messageByID: {[id: string]: any} = {
     next: "???",
   },
   doesnt_know_representative: {
-    text: "Na dann kannst du ihn ja jetzt kennenlernen!",
+    text: "Na dann kannst du sie ja jetzt kennenlernen!",
     next: "choose_representative",
   },
   choose_representative: {
     text: "In welchem Wahlkreis lebst du?",
     choices: landkreise,
-    storeAs: "landkreis",
+    storeAs: "wahlkreis",
     next: "show_representative",
   },
   show_representative: {
     get text() {
-      return `Dein Abgeordneter in ${Store.get("landkreis")} ist {jemand}`;
+      const wahlkreis = Store.get("wahlkreis");
+      const abgeordneter = Abgeordnete.byWahlkreis[wahlkreis];
+      return `Dein Abgeordneter in ${wahlkreis} ist ${abgeordneter.name} von der ${abgeordneter.party}. \n Sie wurde von ${abgeordneter.votes}% der Bürger gewählt.`;
+    },
+    next: "representative_img",
+  },
+  representative_img: {
+    get src() {
+      const abgeordneter = Abgeordnete.byWahlkreis[Store.get("wahlkreis")];
+      return abgeordneter.img;
     },
     next: "???",
   }
