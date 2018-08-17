@@ -56,3 +56,7 @@ h2 .notification {
   background-color: white;
   border: thin solid black;
 }
+
+.placeholder {
+  height: 250px;
+}

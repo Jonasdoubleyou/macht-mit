@@ -24,6 +24,7 @@ class App extends React.Component<{start: string}, AppState> {
   render() {
     return <div id="app">
       {this.getMessages()}
+      <div className="placeholder"></div>
     </div>;
   }
 
@@ -41,8 +42,22 @@ class App extends React.Component<{start: string}, AppState> {
 
   addMessage(id: string) {
     if(messageByID[id])
-      this.setState(({ messages }) => ({ messages: messages.concat(messageByID[id]) }));
+      this.setState(
+        ({ messages }) => ({ messages: messages.concat(messageByID[id]) }),
+        // If the message was added, scroll down to keep it in view:
+        () => {
+          window.scrollBy({
+            top: 100000, // should be enough to go down to bottom
+            left: 0,
+            behavior: "smooth",
+          });
+        }
+      );
   }
 }
 
-ReactDOM.render(<App start={"start"} />, document.body);
+window.addEventListener("load", () => {
+  // Mount the app
+  ReactDOM.render(<App start={"start"} />, document.body);
+  // And always scroll down
+});
