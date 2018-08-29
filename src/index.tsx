@@ -41,6 +41,7 @@ class App extends React.Component<{start: string}, AppState> {
   }
 
   addMessage(id: string) {
+    console.log("addMessage", id, messageByID[id]);
     if(messageByID[id])
       this.setState(
         ({ messages }) => ({ messages: messages.concat(messageByID[id]) }),
@@ -59,5 +60,4 @@ class App extends React.Component<{start: string}, AppState> {
 window.addEventListener("load", () => {
   // Mount the app
   ReactDOM.render(<App start={"start"} />, document.body);
-  // And always scroll down
 });
