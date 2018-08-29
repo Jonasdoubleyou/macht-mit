@@ -22,7 +22,7 @@ export class ImageUI extends React.Component<Image & Props, {}> {
 
   timer?: NodeJS.Timer;
 
-  shown() {
+  componentDidMount() {
     const { continuation, next, time = 2000 } = this.props;
     this.timer = setTimeout(() => continuation(next), time);
   }
