@@ -15,6 +15,8 @@ export interface Answer {
   text: string;
   // the message to show if this answer is chosen:
   next: string;
+  // An optional handler called on click, that has to call back to continue
+  onClick?: (continuation: () => void) => void;
 }
 
 export function isMultipleChoice(message: Message): message is MultipleChoice {
@@ -43,13 +45,21 @@ export class MultipleChoiceUI extends React.Component<MultipleChoice & Props, St
       return question;
 
     // The buttons contain the answers, one is highlighted if chosen
-    const buttons = answers.map(({text, next}) =>
+    const buttons = answers.map(({text, next, onClick}) =>
       <div
         className = {chosen === text ? "button chosen" : "button"}
         onClick={() => {
+          // Prevent that a button triggers twice:
           if(chosen) return;
-          continuation(next);
+          // Highlight the chosen one
           this.setState({ chosen: text });
+          if(onClick) {
+            // If there is a click handler, only continue when that calls back:
+            onClick(() => continuation(next));
+          } else {
+            // otherwise continue directly:
+            continuation(next);
+          }
         }}
 
       >{text}</div>
