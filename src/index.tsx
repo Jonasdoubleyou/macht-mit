@@ -5,6 +5,7 @@ import "./styles.css";
 
 import {Message, MessageUI} from "./message/index";
 import * as Store from "./store";
+import track from "./tracking";
 
 import landkreise from "./data/landkreise";
 import messageByID from "./data/messages";
@@ -41,7 +42,11 @@ class App extends React.Component<{start: string}, AppState> {
   }
 
   addMessage(id: string) {
+    // that simplifies development
     console.log("addMessage", id, messageByID[id]);
+    // track every user action ... (except private data)
+    track(id);
+    // then update the UI
     if(messageByID[id])
       this.setState(
         ({ messages }) => ({ messages: messages.concat(messageByID[id]) }),

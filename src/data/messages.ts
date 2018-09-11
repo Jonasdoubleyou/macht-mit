@@ -1,6 +1,16 @@
 import * as Store from "./../store";
+import track from "./../tracking";
+
 import landkreise from "./landkreise";
 import * as Abgeordnete from "./abgeordnete_niedersachsen";
+
+// a small helper to to write the continuation click handler more elegantly:
+const trackClick = (event: string, meta?: {}) => (continuation: () => void) => {
+ continuation();
+ track(event, meta);
+}
+
+
 const messageByID: {[id: string]: any} = {
   start: {
     text: "\n\n\nMacht mit! Niedersachsen\n\n\n",
