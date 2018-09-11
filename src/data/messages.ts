@@ -167,6 +167,7 @@ const messageByID: {[id: string]: any} = {
         text: "Ja! Es ist dringend!",
         onClick(continuation: () => void) {
           const abgeordneter = Abgeordnete.byWahlkreis[Store.get("wahlkreis")];
+          window.location.href = `tel:${abgeordneter.phone}`;
           continuation();
         },
         next: "congrats",
