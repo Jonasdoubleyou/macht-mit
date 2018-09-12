@@ -10,6 +10,30 @@ interface State {
   position: number;
 }
 
+// Make newlines and highlight certain passages, returns a JSX collection
+// one\ntwo -> one<br>two
+// one *highlight* two -> one <span class="highlight">highlight</span> two
+function format (text: string): (string | JSX.Element)[] {
+  const rows = text.split("\n");
+  const result: (string | JSX.Element)[] = [];
+
+  for(const row of rows) {
+    let inside = false;
+    for(const part of row.split("*")) {
+      if(inside) {
+        result.push(<span className="highlight">{part}</span>);
+      } else {
+        result.push(part);
+      }
+      inside = !inside;
+    }
+    result.push(<br/>);
+  }
+
+  return result;
+}
+
+
 export default class ShowText extends React.Component<Props, State> {
   state = { position: 0 };
 
@@ -40,6 +64,6 @@ export default class ShowText extends React.Component<Props, State> {
     const { text } = this.props;
     const { position } = this.state;
 
-    return <span>{text.slice(0, position)}</span>;
+    return <span>{format(text.slice(0, position))}</span>;
   }
 }
