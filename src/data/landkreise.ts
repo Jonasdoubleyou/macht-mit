@@ -85,7 +85,9 @@ const landkreise = [
   "Wittmund/Inseln",
   "Wolfenbüttel-Nord",
   "Wolfenbüttel-Süd/Salzgitter",
-  "Wolfsburg"
+  "Wolfsburg",
+  // easter-egg:
+  "Hessen"
 ];
 
 export default landkreise;

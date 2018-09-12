@@ -16,15 +16,14 @@ interface Abgeordneter {
 // Source: https://de.wikipedia.org/wiki/Liste_der_Mitglieder_des_Nieders%C3%A4chsischen_Landtages_(18._Wahlperiode)
 // Enriched with researched data found on websites of the Abgeordneten and their parties
 // Only contains direct mandates
-const abgeordnete: Abgeordneter[] = [
-{
+const abgeordnete: Abgeordneter[] = [{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Placeholder_staff_photo.svg/120px-Placeholder_staff_photo.svg.png",
       "name":"Volker Senftleben",
       "birth":"1975",
       "party":"SPD",
       "wahlkreis":"Alfeld",
       "votes":"43,1",
-      "address":"Kalandstraße5\n31061 Alfeld (Leine)",
+      "address":"Wahlkreisbüro\nKalandstraße5\n31061 Alfeld (Leine)",
       "phone":"+49 5181 82 82 92",
       "email":"info@volker-senftleben.de",
       "website":""
@@ -90,10 +89,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"CDU",
       "wahlkreis":"Bersenbrück",
       "votes":"53,6",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Schiphorst 23\n49610 Quakenbrück",
+      "phone":"+49 5431 22 60",
+      "email":"post@calderone.de",
+      "website":"calderone.de"
 }, {
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Placeholder_staff_photo.svg/120px-Placeholder_staff_photo.svg.png",
       "name":"Guido Pott",
@@ -343,10 +342,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Gifhorn-Süd",
       "votes":"41,3",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Steinweg 11\n38518 Gifhorn",
+      "phone":"+49 537115474",
+      "email":"kontakt@philipp-raulfs.de",
+      "website":"philipp-raulfs.de"
 }, {
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Saipa%2C_Alexander.jpg/120px-Saipa%2C_Alexander.jpg",
       "name":"Alexander Saipa",
@@ -354,10 +353,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Goslar",
       "votes":"48,5",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Bäckerstraße 23/24\n38640 Goslar",
+      "phone":"+49 5321 3979988",
+      "email":"wahlkreisbuero@asaipa.de",
+      "website":"alexandersaipa.de"
 }, {
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Gabriele_andretta_cropped.jpg/120px-Gabriele_andretta_cropped.jpg",
       "name":"Gabriele Andretta",
@@ -365,10 +364,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Göttingen-Stadt",
       "votes":"38,9",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Nikolaistraße 30\n37073 Göttingen",
+      "phone":"+49 551 503 11 18",
+      "email":"buero@gabriele-andretta.de",
+      "website":"gabriele-andretta.de"
 }, {
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Karl_Heinz_Hausmann_-_Projekt_Landtag.jpg/120px-Karl_Heinz_Hausmann_-_Projekt_Landtag.jpg",
       "name":"Karl Heinz Hausmann",
@@ -376,10 +375,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Göttingen/Harz",
       "votes":"44,1",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Berliner Straße 3\n37520 Osterode am Harz",
+      "phone":"+49 5522 3 17 50 88",
+      "email":"info@karl-heinz-hausmann.de",
+      "website":"karl-heinz-hausmann.de"
 }, {
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Hujahn%2C_Gerd.jpg/120px-Hujahn%2C_Gerd.jpg",
       "name":"Gerd Hujahn",
@@ -387,10 +386,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Göttingen/Münden",
       "votes":"45,0",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Kesselbach 24\n34346 Hann. Münden",
+      "phone":"+49 5541 126 60",
+      "email":"wahlkreisbuero@gerd-hujahn.de",
+      "website":"gerd-hujahn.de"
 }, {
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Hilbers%2C_Reinhold.jpg/120px-Hilbers%2C_Reinhold.jpg",
       "name":"Reinhold Hilbers",
@@ -398,10 +397,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"CDU",
       "wahlkreis":"Grafschaft Bentheim",
       "votes":"51,1",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Bahnhofsstraße 21a\n48529 Nordhorn",
+      "phone":"+49 59 21 99 1440",
+      "email":"wahlkreisbuero@reinhold-hilbers.de",
+      "website":"reinhold-hilbers.de"
 }, {
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Adomat%2C_Dirk.jpg/120px-Adomat%2C_Dirk.jpg",
       "name":"Dirk Adomat",
@@ -442,10 +441,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Hannover-Linden",
       "votes":"44,9",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Hannah-Arendt-Platz 1\n30159 Hannover",
+      "phone":"+49 511 30 30 30 67",
+      "email":"thela-wernstedt@icloud.com",
+      "website":"thela-wernstedt.de"
 }, {
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Kirci%2C_Alptekin.jpg/120px-Kirci%2C_Alptekin.jpg",
       "name":"Alptekin Kirci",
@@ -453,10 +452,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Hannover-Mitte",
       "votes":"41,4",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Odeonstraße 15/16\n30159 Hannover",
+      "phone":"+49 511 1674 347",
+      "email":"kontakt@kirci.de",
+      "website":"kirci.de"
 }, {
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Landtag_Niedersachsen_DSCF7286.JPG/120px-Landtag_Niedersachsen_DSCF7286.JPG",
       "name":"Stefan Politze",
@@ -464,10 +463,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Hannover-Ricklingen",
       "votes":"42,8",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Odeonstraße 15/16\n30159 Hannover",
+      "phone":"+49 511 30 30 30 70",
+      "email":"info@stefan-politze.de",
+      "website":"stefan-politze.de"
 }, {
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/J%C3%B6rn_Domeier.jpg/120px-J%C3%B6rn_Domeier.jpg",
       "name":"Jörn Domeier",
@@ -475,10 +474,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Helmstedt",
       "votes":"40,8",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Kleiner Wall 1\n38350 Helmstedt",
+      "phone":"+49 5351 309 25 12",
+      "email":"info@joern-domeier.de",
+      "website":"joern-domeier.de"
 }, {
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Lynack%2C_Bernd-2.jpg/120px-Lynack%2C_Bernd-2.jpg",
       "name":"Bernd Lynack",
@@ -486,10 +485,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Hildesheim",
       "votes":"42,7",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Osterstraße 39a\n31134 Hildesheim",
+      "phone":"+49 5121 39 55 2",
+      "email":"info@bernd-lynack.de",
+      "website":"bernd-lynack.de"
 }, {
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Tippelt%2C_Sabine.jpg/120px-Tippelt%2C_Sabine.jpg",
       "name":"Sabine Tippelt",
@@ -497,10 +496,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Holzminden",
       "votes":"47,1",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Am Freibad 12\n31073 Delligsen",
+      "phone":"+49 55 31 94 93 05",
+      "email":"sabinetippelt@aol.de",
+      "website":"sabine-tippelt.de"
 }, {
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Dr._Silke_Lesemann_2017.jpg/120px-Dr._Silke_Lesemann_2017.jpg",
       "name":"Silke Lesemann",
@@ -519,10 +518,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"CDU",
       "wahlkreis":"Langenhagen",
       "votes":"39,0",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Virchowstraße 2\n30938 Burgwedel",
+      "phone":"+49 171 7556705",
+      "email":"post@rainer-fredermann.de",
+      "website":"rainer-fredermann.de"
 }, {
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Thiele%2C_Ulf.jpg/120px-Thiele%2C_Ulf.jpg",
       "name":"Ulf Thiele",
@@ -530,10 +529,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"CDU",
       "wahlkreis":"Leer",
       "votes":"40,9",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Ledastr. 11\n26789 Leer",
+      "phone":"+49 491 91 96 12 9",
+      "email":"email@ulf-thiele.de",
+      "website":"ulf-thiele.de"
 }, {
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Landtag_Niedersachsen_DSCF7242.JPG/120px-Landtag_Niedersachsen_DSCF7242.JPG",
       "name":"Johanne Modder",
@@ -541,10 +540,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Leer/Borkum",
       "votes":"53,7",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Friesenstraße 58\n26789 Leer",
+      "phone":"+49 49 133 71",
+      "email":"buero@johanne-modder.de",
+      "website":"johanne-modder.de"
 }, {
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Placeholder_staff_photo.svg/120px-Placeholder_staff_photo.svg.png",
       "name":"Thordies Hanisch",
@@ -552,10 +551,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Lehrte",
       "votes":"41,4",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Odeonstraße 15/16\n30159 Hannover",
+      "phone":"+49 511 16 74 345",
+      "email":"info@thordies-hanisch.de",
+      "website":"thordies-hanisch.de"
 }, {
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/F%C3%BChner%2C_Christian.jpg/120px-F%C3%BChner%2C_Christian.jpg",
       "name":"Christian Fühner",
@@ -563,10 +562,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"CDU",
       "wahlkreis":"Lingen",
       "votes":"58,0",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Holthauser Esch 16\n49808 Lingen",
+      "phone":"+49 172 322 72 88",
+      "email":"info@christian-fuehner.de",
+      "website":"christian-fuehner.de"
 }, {
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Schr%C3%B6der-Ehlers%2C_Andrea.jpg/120px-Schr%C3%B6der-Ehlers%2C_Andrea.jpg",
       "name":"Andrea Schröder-Ehlers",
@@ -574,10 +573,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Lüneburg",
       "votes":"38,5",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Auf dem Meere 14/15\n21335 Lüneburg",
+      "phone":"+49 4131 23 28 59",
+      "email":"info@andrea-schroeder-ehlers.de",
+      "website":"andrea-schroeder-ehlers.de"
 }, {
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/H%C3%B6vel%2C_Gerda.jpg/120px-H%C3%B6vel%2C_Gerda.jpg",
       "name":"Gerda Hövel",
@@ -585,10 +584,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"CDU",
       "wahlkreis":"Melle",
       "votes":"42,5",
-      "address":"",
+      "address":"Weststraße 8\n49324 Melle",
       "phone":"",
-      "email":"",
-      "website":""
+      "email":"buero@gerda-hoevel.de",
+      "website":"gerda-hoevel.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Hiebing%2C_Bernd-Carsten.jpg/120px-Hiebing%2C_Bernd-Carsten.jpg",
       "name":"Bernd-Carsten Hiebing",
@@ -596,10 +595,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"CDU",
       "wahlkreis":"Meppen",
       "votes":"59,3",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Landegge 1\n49733 Haren",
+      "phone":"+49 59 32 73 45 83",
+      "email":"bc@hiebing.de",
+      "website":"hiebing.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Placeholder_staff_photo.svg/120px-Placeholder_staff_photo.svg.png",
       "name":"Wiebke Osigus",
@@ -607,10 +606,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Neustadt/Wunstorf",
       "votes":"41,7",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Odeonstraße 15/16\n30159 Hannover",
+      "phone":"+49 511 1674344",
+      "email":"wk@wiebkeosigus.de",
+      "website":"wiebkeosigus.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Schm%C3%A4deke%2C_Frank.jpg/120px-Schm%C3%A4deke%2C_Frank.jpg",
       "name":"Frank Schmädeke",
@@ -618,10 +617,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"CDU",
       "wahlkreis":"Nienburg-Nord",
       "votes":"40,2",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Eichenweg 6\n31622 Heemsen",
+      "phone":"+49 170 2208756",
+      "email":"frank.schmaedeke@t-online.de",
+      "website":"frank-schmaedeke.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Heineking%2C_Karsten.jpg/120px-Heineking%2C_Karsten.jpg",
       "name":"Karsten Heineking",
@@ -629,10 +628,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"CDU",
       "wahlkreis":"Nienburg/Schaumburg",
       "votes":"45,4",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Weserstraße 15\n31582 Nienburg",
+      "phone":"+49 50 21 6 000",
+      "email":"heineking@t-online.de",
+      "website":"karsten-heineking.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Frauke_Heiligenstadt_%28Martin_Rulsch%29_2.jpg/120px-Frauke_Heiligenstadt_%28Martin_Rulsch%29_2.jpg",
       "name":"Frauke Heiligenstadt",
@@ -640,10 +639,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Northeim",
       "votes":"47,0",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Scharnhorstplatz 8\n37154 Northeim",
+      "phone":"+49 555 1 908 1111",
+      "email":"buero@frauke-heiligenstadt.de",
+      "website":"frauke-heiligenstadt.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Axel_Brammer_2009_%2856%29.jpg/120px-Axel_Brammer_2009_%2856%29.jpg",
       "name":"Axel Brammer",
@@ -651,10 +650,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Oldenburg-Land",
       "votes":"35,7",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Arthur Fitger-Straße 10\n27749 Delmenhorst",
+      "phone":"+49 4221 15 212 11",
+      "email":"edelmann.buero@axel-brammer.de",
+      "website":"axel-brammer.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Ulf_Prange_aktuell_cropped.jpg/120px-Ulf_Prange_aktuell_cropped.jpg",
       "name":"Ulf Prange",
@@ -662,10 +661,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Oldenburg-Mitte/Süd",
       "votes":"41,2",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Huntestr. 23\n26135 Oldenburg",
+      "phone":"+49 441 361175 12",
+      "email":"wahlkreisbuero@ulf-prange.de",
+      "website":"ulf-prange.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Naber%2C_Hanna.jpg/120px-Naber%2C_Hanna.jpg",
       "name":"Hanna Naber",
@@ -673,10 +672,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Oldenburg-Nord/West",
       "votes":"42,9",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Huntestr. 23\n26135 Oldenburg",
+      "phone":"+49 441 36117513",
+      "email":"wahlkreisbuero@hannanaber.de",
+      "website":"hannanaber.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Henning%2C_Frank.jpg/120px-Henning%2C_Frank.jpg",
       "name":"Frank Henning",
@@ -684,10 +683,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Osnabrück-Ost",
       "votes":"40,1",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Lengericher Landstraße 19b\n49078 Osnabrück",
+      "phone":"+49541 21 440",
+      "email":"kontakt@frankhenning.info",
+      "website":"frankhenning.info"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Pistorius%2C_Boris-9084.jpg/120px-Pistorius%2C_Boris-9084.jpg",
       "name":"Boris Pistorius",
@@ -695,10 +694,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Osnabrück-West",
       "votes":"42,6",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Lengericher Landstraße 19b\n49078 Osnabrück",
+      "phone":"+49541 202 6831",
+      "email":"info@boris-pistorius.de",
+      "website":"boris-pistorius.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Miesner%2C_Axel.jpg/120px-Miesner%2C_Axel.jpg",
       "name":"Axel Miesner",
@@ -706,10 +705,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"CDU",
       "wahlkreis":"Osterholz",
       "votes":"36,1",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Bahnhofsstraße 33a\n27711 Osterholz-Scharmbeck",
+      "phone":"+49 4791 98 294 04",
+      "email":"axel@miesner.de",
+      "website":"axel-miesner.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Bernd_Busemann_%28Martin_Rulsch%29_1.jpg/120px-Bernd_Busemann_%28Martin_Rulsch%29_1.jpg",
       "name":"Bernhard Busemann",
@@ -717,10 +716,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"CDU",
       "wahlkreis":"Papenburg",
       "votes":"60,1",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Meisenstr. 1a\n26892 Dörpen",
+      "phone":"+49 4961 4024",
+      "email":"kontakt@bernd-busemann.de",
+      "website":"bernd-busemann.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/M%C3%B6hle%2C_Matthias.jpg/120px-M%C3%B6hle%2C_Matthias.jpg",
       "name":"Matthias Möhle",
@@ -728,10 +727,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Peine",
       "votes":"48,1",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Goethestraße 16\n31224 Peine",
+      "phone":"+49 51 71 5 06 83 22",
+      "email":"info@matthias-moehle.de",
+      "website":"matthias-moehle.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Holsten%2C_Eike.jpg/120px-Holsten%2C_Eike.jpg",
       "name":"Eike Holsten",
@@ -739,10 +738,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"CDU",
       "wahlkreis":"Rotenburg",
       "votes":"39,4",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Große Straße 61a\n27356 Rotenburg",
+      "phone":"+49 42 61 960 223",
+      "email":"e.holsten@eike-holsten.de",
+      "website":"eike-holsten.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Klein%2C_Stefan.jpg/120px-Klein%2C_Stefan.jpg",
       "name":"Stefan Klein",
@@ -750,10 +749,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Salzgitter",
       "votes":"52,2",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Riesentrapp 14\n38226 Salzgitter",
+      "phone":"+49 53 41 2 23 96 65",
+      "email":"buero@stefanklein-mdl.de",
+      "website":"stefanklein-mdl.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Brinkmann%2C_Markus-8517.jpg/120px-Brinkmann%2C_Markus-8517.jpg",
       "name":"Markus Brinkmann",
@@ -761,10 +760,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Sarstedt/Bad Salzdetfurth",
       "votes":"45,9",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Holztorstr. 31\n31157 Sarstedt",
+      "phone":"+49 5066 6005560",
+      "email":"markus-brinkmann@t-online.de",
+      "website":"ma-brinkmann.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Becker%2C_Karsten.jpg/120px-Becker%2C_Karsten.jpg",
       "name":"Karsten Becker",
@@ -772,10 +771,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Schaumburg",
       "votes":"46,8",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Obernstraße 18\n31655 Stadthagen",
+      "phone":"+49 5721 9953670",
+      "email":"wk@karstenbecker.info",
+      "website":"karstenbecker.info"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Landtag_Niedersachsen_DSCF7439.JPG/120px-Landtag_Niedersachsen_DSCF7439.JPG",
       "name":"Petra Emmerich-Kopatsch",
@@ -783,10 +782,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Seesen",
       "votes":"45,0",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Bäckerstraße 23/24\n38640 Goslar",
+      "phone":"+49 5321 39 79 989 ",
+      "email":"kontakt@emmerich-kopatsch.de",
+      "website":"emmerich-kopatsch.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Althusmann.jpg/120px-Althusmann.jpg",
       "name":"Bernd Althusmann",
@@ -795,9 +794,9 @@ const abgeordnete: Abgeordneter[] = [
       "wahlkreis":"Seevetal",
       "votes":"38,6",
       "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "phone":"+49 5 11 27 99 10",
+      "email":"althusmann@cdu-niedersachsen.de",
+      "website":"athusmann.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Von_Danwitz%2C_Karl-Ludwig.jpg/120px-Von_Danwitz%2C_Karl-Ludwig.jpg",
       "name":"Karl-Ludwig von Danwitz",
@@ -805,10 +804,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"CDU",
       "wahlkreis":"Soltau",
       "votes":"41,9",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Poststraße 11 \n29640 Schneverdingen",
+      "phone":"+49 172 48 21 406",
+      "email":"info@vondanwitz.de",
+      "website":"vondanwitz.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Liebelt%2C_Kerstin.jpg/120px-Liebelt%2C_Kerstin.jpg",
       "name":"Kerstin Liebelt",
@@ -816,10 +815,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Springe",
       "votes":"40,8",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Odeonstraße 15/16\n30159 Hannover",
+      "phone":"+49 511 167 43 49",
+      "email":"info@kerstin-liebelt.de",
+      "website":"kerstin-liebelt.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Seefried%2C_Kai.jpg/120px-Seefried%2C_Kai.jpg",
       "name":"Kai Seefried",
@@ -827,10 +826,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"CDU",
       "wahlkreis":"Stade",
       "votes":"43,4",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Am Hinterdeich 4\n21680 Stade",
+      "phone":"+49 4141 7976488",
+      "email":"beckermann@kai-seefried.de",
+      "website":"kai-seefried.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Meyer%2C_Volker.jpg/120px-Meyer%2C_Volker.jpg",
       "name":"Volker Meyer",
@@ -838,10 +837,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"CDU",
       "wahlkreis":"Syke",
       "votes":"35,8",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Bertha-von-Suttner Straße 5\n27211 Bassum",
+      "phone":"+49 4241 921 011 9",
+      "email":"info@volker-meyer.eu",
+      "website":"volker-meyer.eu"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Hillmer%2C_J%C3%B6rg.jpg/120px-Hillmer%2C_J%C3%B6rg.jpg",
       "name":"Jörg Hillmer",
@@ -849,10 +848,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"CDU",
       "wahlkreis":"Uelzen",
       "votes":"36,8",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Burgstr. 1\n29556 Suderburg",
+      "phone":"+49 581 76066",
+      "email":"info@joerg-hillmer.de",
+      "website":"joerg-hillmer.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Lottke%2C_Oliver.jpg/120px-Lottke%2C_Oliver.jpg",
       "name":"Oliver Lottke",
@@ -860,10 +859,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Unterweser",
       "votes":"38,1",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Lindenstraße 32\n27612 Loxstedt-Nesse",
+      "phone":" +49 4744 / 9138810",
+      "email":"buero@oliver-lottke.de",
+      "website":"oliver-lottke.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Siemer%2C_Stephan.jpg/120px-Siemer%2C_Stephan.jpg",
       "name":"Stephan Siemer",
@@ -871,10 +870,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"CDU",
       "wahlkreis":"Vechta",
       "votes":"60,2",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Falkenrotter Str. 44\n49377 Vechta",
+      "phone":"+49 4441 88979 0",
+      "email":"info@dr-stephan-siemer.de",
+      "website":"dr-stephan-siemer.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Liebetruth%2C_D%C3%B6rte.jpg/120px-Liebetruth%2C_D%C3%B6rte.jpg",
       "name":"Dörte Liebetruth",
@@ -882,10 +881,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Verden",
       "votes":"39,8",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Große Straße 78\n27283 Verden ",
+      "phone":"+49 4231 9708720",
+      "email":"info@doerte-liebetruth.de",
+      "website":"doerte-liebetruth.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Zinke%2C_Sebastian.jpg/120px-Zinke%2C_Sebastian.jpg",
       "name":"Sebastian Zinke",
@@ -893,10 +892,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Walsrode",
       "votes":"46,4",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Moorstrassse 54\n29664 Walsrode",
+      "phone":"+49 51 61 48 10 70 3",
+      "email":"info@sebastian-Zinke.de",
+      "website":"sebastian-Zinke.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Logemann%2C_Karin.jpg/120px-Logemann%2C_Karin.jpg",
       "name":"Karin Logemann",
@@ -904,10 +903,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Wesermarsch",
       "votes":"42,8",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Hiddigwarder Straße 24\n27804 Berne",
+      "phone":" +49 4406 972398",
+      "email":"kontakt@karin-logemann.info",
+      "website":"karin-logemann.info"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Holger_Ansmann_%28Martin_Rulsch%29_2.jpg/120px-Holger_Ansmann_%28Martin_Rulsch%29_2.jpg",
       "name":"Holger Ansmann",
@@ -915,10 +914,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Wilhelmshaven",
       "votes":"45,8",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Rathausplatz 14\n26384 Wilhelmshaven",
+      "phone":"+49 4421 7 79 19 11",
+      "email":"info@holger-ansmann.de",
+      "website":"holger-ansmann.de"
    }, {
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Bock%2C_Andre-8189.jpg/120px-Bock%2C_Andre-8189.jpg",
       "name":"André Bock",
@@ -926,10 +925,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"CDU",
       "wahlkreis":"Winsen",
       "votes":"40,2",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Rathausstraße 7\n21423 Winsen",
+      "phone":"+49 41 71 69 25 968",
+      "email":"a.bock@andrebock.de",
+      "website":"andrebock.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Placeholder_staff_photo.svg/120px-Placeholder_staff_photo.svg.png",
       "name":"Jochen Beekhuis",
@@ -937,10 +936,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Wittmund/Inseln",
       "votes":"43,6",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Kirchstraße 7 \n26409 Wittmund",
+      "phone":"+49 4462 1750 ",
+      "email":"info@jochen-beekhuis.de",
+      "website":"jochen-beekhuis.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Kreiser%2C_Dunja.jpg/120px-Kreiser%2C_Dunja.jpg",
       "name":"Dunja Kreiser",
@@ -948,10 +947,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Wolfenbüttel-Nord",
       "votes":"39,7",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Bahnhof 1C\n38300 Wolfenbüttel",
+      "phone":"+49 5331 88 1415",
+      "email":"info@dunja-kreiser.de",
+      "website":"dunja-kreiser.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Bosse%2C_Marcus.jpg/120px-Bosse%2C_Marcus.jpg",
       "name":"Marcus Bosse",
@@ -959,10 +958,10 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Wolfenbüttel-Süd/Salzgitter",
       "votes":"48,3",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
+      "address":"Bahnhof 1C\n38300 Wolfenbüttel",
+      "phone":"+49 5331 88 14 16",
+      "email":"info@marcus-bosse.de",
+      "website":"marcus-bosse.de"
    },	{
       "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Glosemeyer%2C_Immacolata.jpg/120px-Glosemeyer%2C_Immacolata.jpg",
       "name":"Immacolata Glosemeyer",
@@ -970,11 +969,26 @@ const abgeordnete: Abgeordneter[] = [
       "party":"SPD",
       "wahlkreis":"Wolfsburg",
       "votes":"43,9",
-      "address":"",
-      "phone":"",
-      "email":"",
-      "website":""
-	}
+      "address":"Goethestraße 48\n38440 Wolfsburg",
+      "phone":"+495361 890 529 1",
+      "email":"info@immacolata-glosemeyer.de",
+      "website":"immacolata-glosemeyer.de"
+   },
+
+// Close your eyes, easter-egg :)
+
+   {
+      "img": "http://example.com",
+      "name": "Christian",
+      "birth": "2001",
+      "party": "hessischen Dracheneinwanderungspartei",
+      "wahlkreis": "Hessen",
+      "votes": "1000",
+      "address": "",
+      "phone": "",
+      "email": "",
+      "website": ""
+   }
 ];
 
 export default abgeordnete;
