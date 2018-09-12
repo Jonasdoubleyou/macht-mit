@@ -13,18 +13,20 @@ const trackClick = (event: string, meta?: {}) => (continuation: () => void) => {
 
 const messageByID: {[id: string]: any} = {
   start: {
-    text: "\n\n\nMacht mit! Niedersachsen\n\n\n",
+    text: "\nMacht mit! Niedersachsen\n",
     headline: true,
     time: 500,
     next: "moin",
   },
+
   moin: {
     text: "Moin!",
     time: 500,
     next: "intro",
   },
+
   intro: {
-    text: "Kennst du deine Abgeordneten?",
+    text: "Kennst du deinen Abgeordneten im niedersächsischen Landtag?",
     answers: [
       {
         text: "Ja klar!",
@@ -37,8 +39,9 @@ const messageByID: {[id: string]: any} = {
     ]
 
   },
+
   knows_representative: {
-    text: "Klasse! Willst du mehr über sie wissen?",
+    text: "Klasse! Willst du mehr über ihn wissen?",
     answers: [
       {
         text: "Ja!",
@@ -50,11 +53,12 @@ const messageByID: {[id: string]: any} = {
       }
     ]
   },
+
   why_not: {
-    text: "Wieso nicht? \n Es sind schließlich *deine* Abgeordneten die *dich* repräsentieren!",
+    text: "Wieso nicht? \n Es ist schließlich *dein* Abgeordneter der *dich* repräsentiert!",
     answers: [
       {
-        text: "Ich mag sie nicht!",
+        text: "Ich mag ihn nicht!",
         next: "doesnt_like_representatives",
       },
       {
@@ -63,44 +67,60 @@ const messageByID: {[id: string]: any} = {
       }
     ],
   },
+
   reasons_for_participating: {
     text: "Das ist schade. Demokratie lebt schließlich davon, dass jeder mitmacht!",
     next: "???",
   },
+
   doesnt_like_representatives: {
-    text: "Okay, aber es gibt trotzdem viele Möglichkeiten dich anderweitig einzubringen, und dafür zu Sorgen, das deine Stimme zählt.",
-    next: "???",
+    text: "Und gerade deswegen solltest du mit ihm sprechen, um dich mit ihm auszutauschen.\n Wer weiß was dabei herauskommt...",// "Okay, aber es gibt trotzdem viele Möglichkeiten dich anderweitig einzubringen, und dafür zu sorgen, dass deine Stimme zählt.",
+    answers: [
+      {
+        text: "Okay, warum nicht ... ?",
+        next: "choose_representative",
+      },
+      {
+        text: "Nein, mit dem kann man nicht reden!",
+        next: "next_elections",
+      }
+    ]
   },
+
   doesnt_know_representative: {
-    text: "Na dann kannst du sie ja jetzt kennenlernen!",
+    text: "Na dann kannst du ihn ja jetzt kennenlernen!",
     next: "choose_representative",
   },
+
   choose_representative: {
     text: "In welchem Wahlkreis lebst du?",
     choices: landkreise,
     storeAs: "wahlkreis",
     next: "show_representative",
   },
+
   show_representative: {
     get text() {
       const wahlkreis = Store.get("wahlkreis");
       const abgeordneter = Abgeordnete.byWahlkreis[wahlkreis];
-      return `Dein Abgeordneter in ${wahlkreis} ist ${abgeordneter.name} von der ${abgeordneter.party}. \n Dein Abgeordneter wurde von ${abgeordneter.votes}% der Bürger gewählt.`;
+      return `Dein Abgeordneter in ${wahlkreis} ist ${abgeordneter.name} von der ${abgeordneter.party}. \nEr wurde von ${abgeordneter.votes}% der Bürger gewählt.`;
     },
     next: "representative_img",
   },
+
   representative_img: {
     get src() {
       const abgeordneter = Abgeordnete.byWahlkreis[Store.get("wahlkreis")];
-      return abgeordneter.img;
+      return abgeordneter.img || undefined; // skip if it doesnt exist
     },
     next: "contact_representative",
   },
+  
   contact_representative: {
     text: "So kannst du deinen Abgeordneten kontaktieren:",
     get answers() {
       const answers = [{
-        text: "nee lass mal!",
+        text: "Nee lass mal!",
         next: "congrats"
       }];
       const abgeordneter = Abgeordnete.byWahlkreis[Store.get("wahlkreis")];
@@ -216,16 +236,118 @@ const messageByID: {[id: string]: any} = {
     ]
   },
 
+  next_elections: {
+    text: "Hmm. Naja, zum Glück sind ja spätestens im *Herbst 2022* gibt es wieder Wahlen, dann kannst du dich ja für einen anderen Kandidaten einsetzen. Das ist Demokratie!",
+    answers: [
+      {
+        text: "Bis dahin will ich aber nicht warten...",
+        next: "other_ways",
+      },
+      {
+        text: "Okay, ich weiß schon wen ich dann wähle ...",
+        next: "congrats",
+      },
+      {
+        text: "Wieso sollte ich überhaupt wählen? Sind doch eh immer die selben da oben!",
+        next: "why_vote_at_all",
+      },
+
+    ]
+  },
+
+  other_ways: {
+    text: "Na dann kannst du ja *jetzt* einer Partei oder Bürgerbeteiligung beitreten!",
+    answers: [
+      {
+        text: "Partei klingt gut! Welche gibts denn da so?",
+        next: "partys",
+      },
+      {
+        text: "Was ist denn eine Bürgerbeteiligung?",
+        next: "???"
+      },
+      {
+
+      }
+    ]
+  },
+
+  why_vote_at_all: {
+    text: "Stell dir mal vor viele würden so denken wie du.\n'Wieso sollte ich wählen, hat do sowieso keinen Einfluss'\nDann gehen nur die wählen, die immer schon gewählt haben und alles bleibt beim Alten.\nNur dadurch das *du* zur Wahl gehst, werden auch *deine* Interessen representiert.\nNatürlich heißt das nicht, dass der, den du wählst, auch am Ende im Landtag sitzt. Demokratie heißt auch, die Meniung der Anderen zu respektieren.\n",
+    answers: [
+      {
+        text: "Vergiss es einfach",
+        next: "give_up",
+      },
+      {
+        text: "Okay, ich überlegs mir...",
+        next: "congrats",
+      }
+    ]
+  },
+
+  partys: {
+    text: "Im Landtag sind zurzeit folgende Parteien:",
+    answers: [
+      {
+        text: "SPD",
+        onClick() {
+          window.location.href = "https://spd.de";
+        },
+        next: "congrats",
+      },
+      {
+        text: "CDU",
+        onClick() {
+          window.location.href = "https://cdu.de";
+        },
+        next: "congrats",
+      },
+
+      {
+        text: "Die Gruene",
+        onClick() {
+          window.location.href = "https://gruene.de";
+        },
+        next: "congrats",
+      },
+      {
+        text: "FDP",
+        onClick() {
+          window.location.href = "https://fdp.de";
+        },
+        next: "congrats",
+      },
+      {
+        text: "AfD",
+        onClick() {
+          window.location.href = "https://afd.de";
+        },
+        next: "congrats",
+      },
+    ]
+  },
+
+  give_up: {
+    text: "Schade. Na dann noch einen schönen Tag, und denken sie dran:\nNach jedem Schietwetter scheint auch irgendwann mal wieder die Sonne ... &#9728",
+    time: 10000,
+    next: "start",
+  },
+
   congrats: {
     text: "Herzlichen Glückwunsch!\n Wir sind stolz, Mitbürger wie dich zu haben, die Demokratie leben und aktiv daran arbeiten, das schönste Bundesland noch lebenswerter zu gestalten!\n Unser Dialog ist damit mehr oder weniger zu Ende ...",
     answers: [
       {
-        text: "Geb uns Feedback!",
-        next: "???",
+        text: "Gib uns Feedback!",
+        next: "feedback",
       },
       {
         text: "Wer seid ihr überhaupt?",
-        next: "???",
+        next: "about_us",
+      },
+      {
+        text: "Ich will nochmal!",
+        next: "start",
       },
       {
         text: "Tschüss!",
@@ -234,7 +356,30 @@ const messageByID: {[id: string]: any} = {
         }
       }
     ]
+  },
+
+  about_us: {
+    text: "Moin.\n Wir sind Marie-Christine und Jonas,\n wir sind beide Schüler im 12. Jahrgang, und haben diese App als Projekt in unserem Seminarfach entwickelt um gegen Politikverdrossenheit anzukämpfen.",
+    time: 10000,
+    next: "start",
+  },
+
+  feedback: {
+    type: "textarea",
+    text: "Bitte konstruktive Kritik hier hin:",
+    submit: "Feedback absenden",
+    onSubmit(value: string) {
+      track("feedback", { feedback: value });
+    },
+    next: "thanks"
+  },
+
+  thanks: {
+    text: "Danke für dein Feedback, wir nehmen das sehr Ernst...",
+    next: "congrats",
   }
+
+
 
 };
 
