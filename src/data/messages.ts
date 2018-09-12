@@ -35,13 +35,17 @@ const messageByID: {[id: string]: any} = {
       {
         text: "Nein",
         next: "doesnt_know_representative"
+      },
+      {
+        text: "Leider Ja, ich mag ihn nicht so...",
+        next: "doesnt_like_representatives",
       }
     ]
 
   },
 
   knows_representative: {
-    text: "Klasse! Willst du mehr über ihn wissen?",
+    text: "Klasse! Willst du mehr über ihn wissen oder mal mit ihm schnacken?",
     answers: [
       {
         text: "Ja!",
@@ -115,7 +119,7 @@ const messageByID: {[id: string]: any} = {
     },
     next: "contact_representative",
   },
-  
+
   contact_representative: {
     text: "So kannst du deinen Abgeordneten kontaktieren:",
     get answers() {
@@ -237,7 +241,7 @@ const messageByID: {[id: string]: any} = {
   },
 
   next_elections: {
-    text: "Hmm. Naja, zum Glück sind ja spätestens im *Herbst 2022* gibt es wieder Wahlen, dann kannst du dich ja für einen anderen Kandidaten einsetzen. Das ist Demokratie!",
+    text: "Hmm. Naja, zum Glück sind ja spätestens im *Herbst 2022* wieder Wahlen, dann kannst du dich ja für einen anderen Kandidaten einsetzen. Das ist Demokratie!",
     answers: [
       {
         text: "Bis dahin will ich aber nicht warten...",
@@ -267,13 +271,14 @@ const messageByID: {[id: string]: any} = {
         next: "???"
       },
       {
-
+        text: "Ich schau mich mal selber um...",
+        next: "congrats",
       }
     ]
   },
 
   why_vote_at_all: {
-    text: "Stell dir mal vor viele würden so denken wie du.\n'Wieso sollte ich wählen, hat do sowieso keinen Einfluss'\nDann gehen nur die wählen, die immer schon gewählt haben und alles bleibt beim Alten.\nNur dadurch das *du* zur Wahl gehst, werden auch *deine* Interessen representiert.\nNatürlich heißt das nicht, dass der, den du wählst, auch am Ende im Landtag sitzt. Demokratie heißt auch, die Meniung der Anderen zu respektieren.\n",
+    text: "Stell dir mal vor viele würden so denken wie du.\n'Wieso sollte ich wählen, hat doch sowieso keinen Einfluss'\nDann gehen nur die wählen, die immer schon gewählt haben und alles bleibt beim Alten.\nNur dadurch das *du* zur Wahl gehst, werden auch *deine* Interessen repräsentiert.\nNatürlich heißt das nicht, dass der, den du wählst, auch am Ende im Landtag sitzt. Demokratie heißt auch, die Meinung der Anderen zu respektieren.\n",
     answers: [
       {
         text: "Vergiss es einfach",
@@ -329,7 +334,7 @@ const messageByID: {[id: string]: any} = {
   },
 
   give_up: {
-    text: "Schade. Na dann noch einen schönen Tag, und denken sie dran:\nNach jedem Schietwetter scheint auch irgendwann mal wieder die Sonne ... &#9728",
+    text: "Schade. Na dann noch einen schönen Tag, und denken sie dran:\nNach jedem Schietwetter scheint auch irgendwann mal wieder die Sonne ... ☀",
     time: 10000,
     next: "start",
   },
