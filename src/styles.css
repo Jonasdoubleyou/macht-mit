@@ -49,10 +49,14 @@ img.notification {
   cursor: pointer;
 }
 
-.chosen {
+.chosen, .highlight {
   color: white;
   background-color: black;
   border: none;
+}
+
+.highlight {
+  padding: 3px;
 }
 
 .button-container {
