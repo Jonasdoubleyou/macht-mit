@@ -1,7 +1,10 @@
 const path = require('path');
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackInlineSourcePlugin = require("html-webpack-inline-source-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const FileManagerPlugin = require('filemanager-webpack-plugin');
+
 const webpack = require("webpack");
 
 module.exports = {
@@ -42,6 +45,12 @@ module.exports = {
          NODE_ENV: JSON.stringify("production")
        }
     }),
-    new webpack.optimize.UglifyJsPlugin()
+    new webpack.optimize.UglifyJsPlugin(),
+	// move to root so that github hosts it
+	new FileManagerPlugin({
+      onEnd: {
+        copy: [{ source: 'dist/index.html', destination: 'index.html' }]
+		}
+	})
   ]
 };
