@@ -13,7 +13,15 @@ const trackClick = (event: string, meta?: {}) => (continuation: () => void) => {
 
 const messageByID: {[id: string]: any} = {
   start: {
-    text: "\nMacht mit! Niedersachsen\n",
+    type: "popup",
+    text: "_Datenschutz_",
+    popupText: "*Was wir nicht sammeln:*\n\n Wir sammeln keinerlei personenbezogende Daten!\n Ohne wenn und aber. Niemand außer dir weiß, dass du unsere Seite besuchst und hier Fragen beantwortest.\nNatürlich weiß das allerdings dein Internetanbieter und der Serverhoster, so ist nunmal das Internet.\n\n*Was wir sammeln:*\n\n Wir sammeln anonyme Nutzerstatistiken (z.B.: Wie viele Nutzer haben auf 'Ja!' und dann 'Nein' geklickt), damit wir unseren Erfolg / Misserfolg bewerten / feiern / kritisch hinterfragen können. Wenn du uns ein Feedback schreibst, erreicht uns das natürlich auch ... \n\nWir finden es übrigens klasse, dass du dich für deine Privatsphäre interessierst!",
+    time: 0,
+    next: "headline",
+  },
+
+  headline: {
+    text: "Macht mit! Niedersachsen\n",
     headline: true,
     time: 500,
     next: "moin",

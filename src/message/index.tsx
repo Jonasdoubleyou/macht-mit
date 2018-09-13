@@ -5,6 +5,7 @@ import {MultipleChoice, MultipleChoiceUI, isMultipleChoice} from "./multiplechoi
 import {InputChoice, InputChoiceUI, isInputChoice} from "./inputchoice";
 import {Image, ImageUI, isImage} from "./image";
 import {TextArea, TextAreaUI, isTextArea} from "./textarea";
+import {Popup, PopupUI, isPopup} from "./popup";
 
 export interface Message {
   id: string;
@@ -19,9 +20,12 @@ export interface Props {
 
 
 export const MessageUI = (props: Message & Props) => {
+  if(isPopup(props))
+    return <PopupUI {...props} />;
+    
   if(isTextArea(props))
     return <TextAreaUI {...props} />;
-    
+
   if(isMultipleChoice(props))
     return <MultipleChoiceUI {...props} />;
 
