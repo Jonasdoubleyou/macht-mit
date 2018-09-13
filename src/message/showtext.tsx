@@ -40,7 +40,7 @@ export default class ShowText extends React.Component<Props, State> {
   timer: NodeJS.Timer;
 
   componentDidMount() {
-    const {speed = 50} = this.props;
+    const {speed = 35} = this.props;
     this.timer = setInterval(() => this.update(), speed);
   }
 
@@ -49,15 +49,22 @@ export default class ShowText extends React.Component<Props, State> {
   }
 
   update() {
-    const { position } = this.state;
-    const { text, done = () => 0 } = this.props;
-    if(position >= text.length) {
-      clearInterval(this.timer);
-      done();
-      return;
-    }
+    this.setState(({ position }) => {
+      const { text, done = () => 0 } = this.props;
+      if(position >= text.length) {
+        clearInterval(this.timer);
+        done();
+        return;
+      }
 
-    this.setState(({ position}) => ({ position: position + 1}));
+      // jump over whitespaces as that otherwise jiggles the text during animation
+      while(text[position] && text[position] == " ")
+        position++;
+
+      console.log(text.slice(0, position));
+
+      return { position: position + 1};
+    });
   }
 
   render() {
