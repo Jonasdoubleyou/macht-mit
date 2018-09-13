@@ -64,8 +64,9 @@ export class PopupUI extends React.Component<Popup & Props, State> {
       <ShowText text={text} done={() => this.shown()}/>
     </div>;
 
-    const popup = <div className="popup" style={{ display: showPopup ? "block" : "none" }} onClick={() => this.hidePopup()} >
-      {...format(popupText + "\n\n*Schließen*")}
+    const popup = <div className="popup" style={{ display: showPopup ? "block" : "none" }} >
+      {...format(popupText + "\n\n")}
+      <span className="highlight" onClick={() => this.hidePopup()}>Schließen</span><br /><br />
     </div>;
 
     return [msg, popup];
