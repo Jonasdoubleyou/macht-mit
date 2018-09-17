@@ -12,6 +12,8 @@ export interface Image extends Message {
   time?: number;
   // the message to show afterwards
   next: string;
+
+  noBorder?: boolean;
 }
 
 export function isImage(message: Message): message is Image {
@@ -33,13 +35,14 @@ export class ImageUI extends React.Component<Image & Props, {}> {
   }
 
   render() {
-    const {src, alt } = this.props;
+    const {src, alt, noBorder } = this.props;
 
     return <div className="notification">
       <img
         className="notification"
         src={src}
         alt={alt}
+        style={noBorder ? { border: "none" } : {}}
       />
     </div>;
   }
