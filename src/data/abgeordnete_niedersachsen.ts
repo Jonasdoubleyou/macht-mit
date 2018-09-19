@@ -973,21 +973,6 @@ const abgeordnete: Abgeordneter[] = [{
       "phone":"+495361 890 529 1",
       "email":"info@immacolata-glosemeyer.de",
       "website":"immacolata-glosemeyer.de"
-   },
-
-// Close your eyes, easter-egg :)
-
-   {
-      "img": "http://example.com",
-      "name": "Christian",
-      "birth": "2001",
-      "party": "hessischen Dracheneinwanderungspartei",
-      "wahlkreis": "Hessen",
-      "votes": "1000",
-      "address": "",
-      "phone": "",
-      "email": "",
-      "website": ""
    }
 ];
 
