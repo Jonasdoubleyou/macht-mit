@@ -49,8 +49,12 @@ module.exports = {
 	// move to root so that github hosts it
 	new FileManagerPlugin({
       onEnd: {
-        copy: [{ source: 'dist/index.html', destination: 'index.html' }]
-		}
+        copy: [
+			{ source: 'dist/index.html', destination: 'index.html' },
+			{ source: 'dist/index.html', destination: 'android/app/src/main/assets/index.html' },
+			{ source: 'icons/', destination: 'android/app/src/main/assets/icons/' },
+		]
+	  }
 	})
   ]
 };
