@@ -9,6 +9,8 @@ export interface MultipleChoice extends Message {
   text: string;
   // All the possible answers:
   answers: Answer[];
+  // wether the answer can be changed:
+  unlock?: boolean;
 }
 
 export interface Answer {
@@ -16,7 +18,7 @@ export interface Answer {
   // the message to show if this answer is chosen:
   next: string;
   // An optional handler called on click, that has to call back to continue
-  onClick?: (continuation: () => void) => void;
+  onClick?: (continuation?: () => void) => void;
 }
 
 export function isMultipleChoice(message: Message): message is MultipleChoice {
@@ -34,7 +36,7 @@ interface State {
 export class MultipleChoiceUI extends React.Component<MultipleChoice & Props, State> {
 
   render() {
-    const {text, answers, continuation} = this.props;
+    const {text, answers, continuation, unlock = false} = this.props;
     const { chosen = "", showAnswers = false } = this.state || {};
 
     const question = <div className="notification">
@@ -50,12 +52,23 @@ export class MultipleChoiceUI extends React.Component<MultipleChoice & Props, St
         className = {chosen === text ? "button chosen" : "button"}
         onClick={() => {
           // Prevent that a button triggers twice:
-          if(chosen) return;
+          if(chosen) {
+            if(unlock) onClick(() => 0);
+            return;
+          }
+
           // Highlight the chosen one
           this.setState({ chosen: text });
+
+
           if(onClick) {
             // If there is a click handler, only continue when that calls back:
-            onClick(() => continuation(next));
+            if(onClick.length) {
+              onClick(() => continuation(next));
+            } else {
+              onClick();
+              continuation(next);
+            }
           } else {
             // otherwise continue directly:
             continuation(next);
