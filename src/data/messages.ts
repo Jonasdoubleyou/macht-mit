@@ -30,7 +30,7 @@ const messageByID: {[id: string]: any} = {
   headline: {
     text: "Macht mit! Niedersachsen\n",
     headline: true,
-    time: 500,
+    time: 4000,
     next: "moin",
   },
 
