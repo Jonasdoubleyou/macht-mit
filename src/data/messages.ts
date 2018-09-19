@@ -14,11 +14,12 @@ const trackClick = (event: string, meta?: {}) => (continuation: () => void) => {
 const messageByID: {[id: string]: any} = {
   start: {
     type: "popup",
-    text: "_Datenschutz_",
-    popupText: "*Was wir nicht sammeln:*\n\n Wir sammeln keinerlei personenbezogende Daten!\n Ohne wenn und aber. Niemand außer dir weiß, dass du unsere Seite besuchst und hier Fragen beantwortest.\nNatürlich weiß das allerdings dein Internetanbieter und der Serverhoster, so ist nunmal das Internet.\n\n*Was wir sammeln:*\n\n Wir sammeln anonyme Nutzerstatistiken (z.B.: Wie viele Nutzer haben auf 'Ja!' und dann 'Nein' geklickt), damit wir unseren Erfolg / Misserfolg bewerten / feiern / kritisch hinterfragen können. Wenn du uns ein Feedback schreibst, erreicht uns das natürlich auch ... \n\nWir finden es übrigens klasse, dass du dich für deine Privatsphäre interessierst!",
+    text: "_Datenschutz_  |  _Impressum_",
+    popupText: "*Impressum:*\n\n Herausgeber:\nJonas Wilms\nAsselermoor 17\n21706 Drochtersen\njonaswilms2000@gmail.com\n\nWir versuchen, möglichst wertungsfrei, objektiv und akkurat die Informationen zusammenzustellen. Sollten sie einen Fehler gefunden haben, kontaktieren sie uns bitte, wir beheben ihn so schnell wir können. Dies ist ein Schulprojekt und kein Projekt der Landesregierung, wir können nicht garantieren, dass sämtliche Inhalte richtig sind. \n\n*Datenschutz:*\n\n*Was wir nicht sammeln:*\n\n Wir sammeln keinerlei personenbezogende Daten!\n Ohne wenn und aber. Wir wissen nicht, dass du unsere Seite besuchst und hier Fragen beantwortest.\nNatürlich weiß das allerdings dein Internetanbieter und der Serverhoster, so ist nunmal das Internet.\n\n*Was wir sammeln:*\n\n Wir sammeln anonyme Nutzerstatistiken (z.B.: Wie viele Nutzer haben auf 'Ja!' und dann auf 'Nein' geklickt), damit wir unseren Erfolg / Misserfolg bewerten / feiern / kritisch hinterfragen können. Wenn du uns ein Feedback schreibst, erreicht uns das natürlich auch ... \n\nWir finden es übrigens klasse, dass du dich für deine Privatsphäre interessierst!",
     time: 0,
     next: "logo",
   },
+
 
   logo: {
     src: "icons/ms-icon-150x150.png",
@@ -67,8 +68,30 @@ const messageByID: {[id: string]: any} = {
         next: "choose_representative"
       },
       {
+        text: "Nee, keine Zeit / keine Lust",
+        next: "no_time",
+      },
+      {
         text: "Nein!",
         next: "why_not",
+      }
+    ]
+  },
+
+  no_time: {
+    text: "Das ist aber mal ne schlechte Ausrede. Dein Abgeordneter redet bestimmt gerne mit dir und kümmert sich um deine Probleme. Willst du ihn vieleicht doch kontaktieren? Oder dich mal über die Parteien informieren?",
+    answers: [
+      {
+        text: "Okay, wie kann ich ihn erreichen?",
+        next: "choose_representative",
+      },
+      {
+        text: "Was machen die Parteien so?",
+        next: "partys",
+      },
+      {
+        text: "Ach vergiss es einfach",
+        next: "give_up",
       }
     ]
   },
@@ -88,8 +111,17 @@ const messageByID: {[id: string]: any} = {
   },
 
   reasons_for_participating: {
-    text: "Das ist schade. Demokratie lebt schließlich davon, dass jeder mitmacht!",
-    next: "???",
+    text: "Das ist schade. Demokratie lebt schließlich davon, dass jeder mitmacht! Es geht um *deine Zukunft* und die Zukunft Niedersachsens! Jede Stimme zählt, also lass deine nicht verfallen! \n\n Überzeugt?",
+    answers: [
+      {
+        text: "Joa",
+        next: "choose_representative",
+      },
+      {
+        text: "Ne.",
+        next: "give_up",
+      }
+    ]
   },
 
   doesnt_like_representatives: {
@@ -140,7 +172,7 @@ const messageByID: {[id: string]: any} = {
     get answers() {
       const answers = [{
         text: "Nee lass mal!",
-        next: "congrats"
+        next: "dont_contact"
       }];
       const abgeordneter = Abgeordnete.byWahlkreis[Store.get("wahlkreis")];
 
@@ -172,6 +204,20 @@ const messageByID: {[id: string]: any} = {
     }
   },
 
+  dont_contact: {
+    text: "Sicher das du ihm nichts sagen willst?",
+    answers: [
+      {
+        text: "Ja",
+        next: "other_ways",
+      },
+      {
+        text: "Vieleicht irgendwann mal ...",
+        next: "congrats"
+      }
+    ]
+  },
+
   email_representative: {
     get text() {
       const abgeordneter = Abgeordnete.byWahlkreis[Store.get("wahlkreis")];
@@ -181,10 +227,9 @@ const messageByID: {[id: string]: any} = {
     answers: [
       {
         text: "Ja!",
-        onClick(continuation: () => void) {
+        onClick() {
           const abgeordneter = Abgeordnete.byWahlkreis[Store.get("wahlkreis")];
-          window.location.href = `mailto:${abgeordneter.email}`;
-          continuation();
+          window.open(`mailto:${abgeordneter.email}`);
         },
         next: "congrats",
       },
@@ -204,10 +249,9 @@ const messageByID: {[id: string]: any} = {
     answers: [
       {
         text: "Ja! Es ist dringend!",
-        onClick(continuation: () => void) {
+        onClick() {
           const abgeordneter = Abgeordnete.byWahlkreis[Store.get("wahlkreis")];
           window.location.href = `tel:${abgeordneter.phone}`;
-          continuation();
         },
         next: "congrats",
       },
@@ -228,10 +272,9 @@ const messageByID: {[id: string]: any} = {
     answers: [
       {
         text: "Ja!",
-        onClick(continuation: () => void) {
+        onClick() {
           const abgeordneter = Abgeordnete.byWahlkreis[Store.get("wahlkreis")];
-          window.location.href = "http://" + abgeordneter.website;
-          continuation();
+          window.open("http://" + abgeordneter.website);
         },
         next: "congrats",
       },
@@ -264,7 +307,7 @@ const messageByID: {[id: string]: any} = {
       },
       {
         text: "Okay, ich weiß schon wen ich dann wähle ...",
-        next: "congrats",
+        next: "inform",
       },
       {
         text: "Wieso sollte ich überhaupt wählen? Sind doch eh immer die selben da oben!",
@@ -274,8 +317,22 @@ const messageByID: {[id: string]: any} = {
     ]
   },
 
+  inform: {
+    text: "Klasse! Dann hast du ja noch ein bisschen Zeit dich mit den Inhalten, für die dein Kandidat steht, ausseinanderzusetzen oder dich über Bürgerbeteiligungen zu informieren!",
+    answers: [
+      {
+        text: "Parteien",
+        next: "partys",
+      },
+      {
+        text: "Bürgerbeteiligungen, was ist das?",
+        next: "buergerbeteligung",
+      }
+    ]
+  },
+
   other_ways: {
-    text: "Na dann kannst du ja *jetzt* einer Partei oder Bürgerbeteiligung beitreten!",
+    text: "Na dann kannst du ja vieleicht *jetzt* einer Partei oder Bürgerbeteiligung beitreten!",
     answers: [
       {
         text: "Partei klingt gut! Welche gibts denn da so?",
@@ -283,11 +340,21 @@ const messageByID: {[id: string]: any} = {
       },
       {
         text: "Was ist denn eine Bürgerbeteiligung?",
-        next: "???"
+        next: "buergerbeteligung"
       },
       {
         text: "Ich schau mich mal selber um...",
-        next: "congrats",
+        next: "hints",
+      }
+    ]
+  },
+
+  hints: {
+    text: "Klasse! Hier ein parr hilfreiche Infos:",
+    answers: [
+      {
+        text: "Parteien",
+        next: "partys",
       }
     ]
   },
@@ -307,19 +374,20 @@ const messageByID: {[id: string]: any} = {
   },
 
   partys: {
-    text: "Im Landtag sind zurzeit folgende Parteien:",
+    text: "Im Landtag sind zurzeit folgende Parteien: \n(Hier sind die Wahlprogramme verlinkt)",
+    unlock: true, // the client can visit multiple websites
     answers: [
       {
         text: "SPD",
         onClick() {
-          window.location.href = "https://spd.de";
+          window.open("https://www.spdnds.de/regierungsprogramm/");
         },
         next: "congrats",
       },
       {
         text: "CDU",
         onClick() {
-          window.location.href = "https://cdu.de";
+          window.open("https://cdu-niedersachsen.de/regierungsprogramm/");
         },
         next: "congrats",
       },
@@ -327,35 +395,44 @@ const messageByID: {[id: string]: any} = {
       {
         text: "Die Gruene",
         onClick() {
-          window.location.href = "https://gruene.de";
+          window.open("https://gruene-niedersachsen.de/programm/");
         },
         next: "congrats",
       },
       {
         text: "FDP",
         onClick() {
-          window.location.href = "https://fdp.de";
+          window.open("https://fdp-nds.de/service/wahlprogramm.html");
         },
         next: "congrats",
       },
       {
         text: "AfD",
         onClick() {
-          window.location.href = "https://afd.de";
+          window.open("http://afd-niedersachsen.de/politik/leitantrag-zum-afd-programm-niedersachsen");
         },
         next: "congrats",
       },
     ]
   },
 
+  buergerbeteligung: {
+
+  },
+
   give_up: {
-    text: "Schade. Na dann noch einen schönen Tag, und denken sie dran:\nNach jedem Schietwetter scheint auch irgendwann mal wieder die Sonne ... ☀",
+    text: "Schade. Na dann noch einen schönen Tag, und denken Sie dran:\nNach jedem Schietwetter scheint auch irgendwann mal wieder die Sonne ... ☀",
     time: 10000,
-    next: "start",
+    next: "end",
   },
 
   congrats: {
-    text: "Herzlichen Glückwunsch!\n Wir sind stolz, Mitbürger wie dich zu haben, die Demokratie leben und aktiv daran arbeiten, das schönste Bundesland noch lebenswerter zu gestalten!\n Unser Dialog ist damit mehr oder weniger zu Ende ...",
+    text: "Klasse!\n Wir sind stolz, Mitbürger wie dich zu haben, die Demokratie leben und aktiv daran arbeiten, das schönste Bundesland noch lebenswerter zu gestalten!\n Unser Dialog ist damit mehr oder weniger zu Ende ...",
+    next: "end",
+  },
+
+  end: {
+    text: "",
     answers: [
       {
         text: "Gib uns Feedback!",
@@ -379,9 +456,9 @@ const messageByID: {[id: string]: any} = {
   },
 
   about_us: {
-    text: "Moin.\n Wir sind Marie-Christine und Jonas,\n wir sind beide Schüler im 12. Jahrgang, und haben diese App als Projekt in unserem Seminarfach entwickelt um gegen Politikverdrossenheit anzukämpfen.",
+    text: "Moin.\n Wir sind Marie-Christine und Jonas,\n wir sind beide Schüler im 12. Jahrgang des Vincent-Lübeck-Gymnasiums Stade, und haben diese App als Projekt in unserem Seminarfach entwickelt um gegen Politikverdrossenheit anzukämpfen. Uns ist aufgefallen, das viele unserer Mitschüler unseren Landtagsabgeordneten gar nicht kannten, und dass es teilweise sehr schwierig ist, einen Kontakt zum Abgeordneten herzustellen. Deshalb haben wir für alle Abgeordneten im Landtag die Kontaktdaten herausgesucht, und auch weitere wichtige Infos hier zusammengestellt. Naja und am Ende gibts halt auch eine Note für dieses Projekt ... ;)",
     time: 10000,
-    next: "start",
+    next: "end",
   },
 
   feedback: {
@@ -395,8 +472,8 @@ const messageByID: {[id: string]: any} = {
   },
 
   thanks: {
-    text: "Danke für dein Feedback, wir nehmen das sehr Ernst...",
-    next: "congrats",
+    text: "Vielen Dank für dein Feedback, wir nehmen das sehr Ernst...",
+    next: "end",
   }
 
 
