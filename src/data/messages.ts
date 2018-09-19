@@ -350,7 +350,7 @@ const messageByID: {[id: string]: any} = {
   },
 
   hints: {
-    text: "Klasse! Hier ein parr hilfreiche Infos:",
+    text: "Klasse! Hier ein paar hilfreiche Infos:",
     answers: [
       {
         text: "Parteien",
@@ -360,7 +360,7 @@ const messageByID: {[id: string]: any} = {
   },
 
   why_vote_at_all: {
-    text: "Stell dir mal vor viele würden so denken wie du.\n'Wieso sollte ich wählen, hat doch sowieso keinen Einfluss'\nDann gehen nur die wählen, die immer schon gewählt haben und alles bleibt beim Alten.\nNur dadurch das *du* zur Wahl gehst, werden auch *deine* Interessen repräsentiert.\nNatürlich heißt das nicht, dass der, den du wählst, auch am Ende im Landtag sitzt. Demokratie heißt auch, die Meinung der Anderen zu respektieren.\n",
+    text: "Stell dir mal vor viele würden so denken wie du.\n'Immer nur die selben!'\nDann gehen nur die wählen, die immer schon gewählt haben und alles bleibt beim Alten.\nNur dadurch das *du* zur Wahl gehst, werden auch *deine* Interessen repräsentiert.\nNatürlich heißt das nicht, dass der, den du wählst, auch am Ende im Landtag sitzt. Demokratie heißt auch, die Meinung der Anderen zu respektieren.\n",
     answers: [
       {
         text: "Vergiss es einfach",
