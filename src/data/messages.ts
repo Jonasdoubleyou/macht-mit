@@ -111,7 +111,7 @@ const messageByID: {[id: string]: any} = {
   },
 
   reasons_for_participating: {
-    text: "Das ist schade. Demokratie lebt schließlich davon, dass jeder mitmacht! Es geht um *deine Zukunft* und die Zukunft Niedersachsens! Jede Stimme zählt, also lass deine nicht verfallen! \n\n Überzeugt?",
+    text: "Das ist schade. Demokratie lebt schließlich davon, dass jeder mitmacht! Es geht um *deine Zukunft* und die Zukunft Niedersachsens! Wenn du nicht wählen gehst, entscheiden Andere über deine Zukunft. Willst du das? Außerdem ist es nicht nur dein Recht zu wählen sondern auch ein Privileg und eine Bürgerpflicht! Jede Stimme zählt, also lass deine nicht verfallen! \n\n Überzeugt?",
     answers: [
       {
         text: "Joa",
@@ -417,7 +417,21 @@ const messageByID: {[id: string]: any} = {
   },
 
   buergerbeteligung: {
-
+    text: "Bürgerbeteiligung ist ein Sammelbegriff für verschiedene Möglichkeiten für Bürger, auch ohne die Parteien ein bestimmtes Anliegen umzusetzen. Du könntest zum Beispiel einen Verein gründen, um dann mit Beschwerden, Demonstrationen, Streiks o.Ä. auf dein Anliegen aufmerksam zu machen. Damit das klappt brauchst du natürlich Mitstreiter, also los geht's! Such dir jetzt Mitstreiter und schon kann es losgehen! ",
+    answers: [
+      {
+        text: "Das mach ich jetzt!",
+        next: "congrats",
+      },
+      {
+        text: "Okay, weiter geht's mit Parteien!",
+        next: "partys",
+      },
+      {
+        text: "Gut, das reicht mir an Politik für heute.",
+        next: "congrats",
+      }
+    ]
   },
 
   give_up: {
