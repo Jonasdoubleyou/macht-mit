@@ -13,6 +13,9 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import kotlinx.android.synthetic.main.activity_main.*
+import android.content.Intent
+import android.net.Uri
+
 
 /**
  * Just a small webbrowser that shows our react app
@@ -50,8 +53,9 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onReceivedError(view: WebView?, request: WebResourceRequest?, error: WebResourceError?) {
-                progressDialog.show()
-                progressDialog.setMessage("Fehler beim laden")
+                // If the main page was loaded lets ignore further errors:
+                // progressDialog.show()
+                progressDialog.setMessage("Fehler beim laden, sorry.")
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     println(error?.description)
                     println(request?.url)
@@ -61,6 +65,16 @@ class MainActivity : AppCompatActivity() {
             override fun onLoadResource(view: WebView?, url: String?) {
                 super.onLoadResource(view, url)
                 println(url)
+            }
+
+            override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
+                // Whenever the page is left (e.g. user clicks on a party link)
+                // open the native browser instead:
+                val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                startActivity(browserIntent)
+
+                // Cancel the redirect:
+                return false
             }
         }
     }
